@@ -2,7 +2,7 @@
 set -euo pipefail
 
 PROJECT_DIR=/home/vagrant/django_git/mysite
-REPO_URL=git@github.com:rookiesis/django-test.git
+REPO_URL=https://github.com/rookiesis/django-test.git
 BRANCH=master   # 또는 master
 
 # 1) 디렉토리 준비
