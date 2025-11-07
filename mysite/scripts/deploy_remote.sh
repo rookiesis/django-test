@@ -7,7 +7,7 @@ BRANCH=master   # 또는 master
 
 # 1) 디렉토리 준비
 mkdir -p ${PROJECT_DIR}
-cd ${PROJECT_DIR}
+cd /home/vagrant/django_git/mysite/mysite
 
 
 # 2) 레포가 없으면 clone, 있으면 reset to remote
