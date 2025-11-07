@@ -1,14 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
-PROJECT_DIR=/home/vagrant/django_git
+PROJECT_DIR=/home/vagrant/django_git/mysite
 REPO_URL=https://github.com/rookiesis/django-test.git
 BRANCH=master   # 또는 master
 
 # 1) 디렉토리 준비
 mkdir -p ${PROJECT_DIR}
 cd ${PROJECT_DIR}
-
 
 # 2) 레포가 없으면 clone, 있으면 reset to remote
 if [ ! -d .git ]; then
@@ -17,13 +16,14 @@ else
   git fetch origin
   git reset --hard origin/${BRANCH}
 fi
+cd mysite
 
 # 3) 가상환경 준비
 python3 -m venv venv || true
 source venv/bin/activate
 
 pip install --upgrade pip
-pip install -r mysite/requirements.txt
+pip install -r requirements.txt
 
 # 4) 환경변수 파일(.env)이 필요하면 복사/설정 (수동으로 .env를 서버에 배치)
 # cp /home/vagrant/.env.production .env || true
