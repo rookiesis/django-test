@@ -6,8 +6,12 @@ REPO_URL=https://github.com/rookiesis/django_test.git
 BRANCH=master   # 또는 master
 
 # 1) 디렉토리 준비
+if [ -d ${PROJECT_DIR} ]; then
+	rm -rf ${PROJECT_DIR}
+fi
 mkdir -p ${PROJECT_DIR}
 cd ${PROJECT_DIR}
+
 
 # 2) 레포가 없으면 clone, 있으면 reset to remote
 if [ ! -d .git ]; then
