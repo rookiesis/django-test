@@ -25,7 +25,7 @@ sh """
 ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} \
 "mkdir -p ${DEPLOY_DIR} && \
  cd ${DEPLOY_DIR} && \
- curl -s -o /tmp/deploy_remote.sh https://raw.githubusercontent.com/rookiesis/django-test/mysite/${BRANCH}/scripts/deploy_remote.sh && \
+ curl -s -o /tmp/deploy_remote.sh https://raw.githubusercontent.com/rookiesis/django-test/${BRANCH}/mysite/scripts/deploy_remote.sh && \
  chmod +x /tmp/deploy_remote.sh && \
  /tmp/deploy_remote.sh"
 """
